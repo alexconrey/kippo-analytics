@@ -42,10 +42,10 @@ if(isset($_GET['ip'])) {
 while($attempt = $result->fetch_assoc()) {
 	echo "<tr>";
 	echo "<td><a href='searchByID.php?id=".$attempt['session']."'>".$attempt['session']."</a></td>";
-	echo "<td>".$attempt['username']."</td>";
+	echo "<td><a href='searchByUser.php?user=".$attempt['username']."'>".$attempt['username']."</a></td>";
 	echo "<td>".$attempt['password']."</td>";
 	echo "<td>".$attempt['timestamp']."</td>";
-	echo "<td>".$attempt['ip']."</td>";
+	echo "<td><a href='searchByIP.php?ip=".$attempt['ip']."'>".$attempt['ip']."</a></td>";
 	echo "</td>";
 }
 ?>
