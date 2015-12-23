@@ -54,7 +54,7 @@ function sensorFromID($id) {
 	global $mysqli;
 	$sql = "SELECT ip FROM sensors WHERE id = '".$id."'";
 	//if(!$result = $mysqli->query($sql)) {
-	if(!$result = runQuery($sql))
+	if(!$result = runQuery($sql)) {
 		echo "Sorry, couldn't run that query";
 		exit;
 	}
