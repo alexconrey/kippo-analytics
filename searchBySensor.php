@@ -4,7 +4,15 @@ include('header.php');
 global $sensors;
 
 if(isset($_GET['id'])) {
-?>
+  $id = $_GET['id'];
+  if(!$result = $mysqli->query("SELECT * FROM sessions WHERE sensor = '".$id."'")) {
+          echo "Couldn't run that query right now.";
+          exit;
+  }
+          if($result->num_rows === 0) {
+                  $error = throwError("That ID isn't showing in the records.");
+          }
+  ?>
 
     <div class="container-fluid">
       <div class="row">
@@ -13,22 +21,6 @@ if(isset($_GET['id'])) {
 
           <div class="row placeholders">
           </div>
-<?php
-$id = $_GET['id'];
-if(!$result = $mysqli->query("SELECT * FROM sessions WHERE sensor = '".$id."'")) {
-        echo "Couldn't run that query right now.";
-        exit;
-}
-        if($result->num_rows === 0) {
-                $error = throwError("That ID isn't showing in the records.");
-        }
-?>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-      <h1 class="page-header">Search By ID: <?php echo $_GET['id']; ?></h1>
-
     <?php if(isset($error)) {
             echo $error;
             exit;
