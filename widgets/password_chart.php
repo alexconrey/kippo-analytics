@@ -1,4 +1,5 @@
 <?php
+include('../settings.php');
 global $mysqli;
 global $settings;
         $sql = "SELECT password FROM auth WHERE timestamp BETWEEN '".date('Y-m-d')." 00:00:00' AND '".date('Y-m-d')." 23:59:59' LIMIT " . $settings['db_result_limit'];
