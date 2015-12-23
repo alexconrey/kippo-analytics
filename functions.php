@@ -47,6 +47,7 @@ function sensorFromID($sensor_id) {
 
 
 function fetchSessions($limiter = NULL) {
+	global $mysqli;
 	$sql = "SELECT * FROM sessions";
 	if(!$result = $mysqli->query($sql)) {
 		echo "Couldn't run that query right now";
@@ -56,7 +57,9 @@ function fetchSessions($limiter = NULL) {
 		echo "No results found";
 		
 	}
-	
+	if(!(is_null($limiter))) {
+		$something = NULL;
+	}	
 	return $result->fetch_assoc();
 }
 
