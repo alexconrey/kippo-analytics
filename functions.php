@@ -7,9 +7,9 @@ $mysqli = new mysqli($settings['db_host'],$settings['db_user'],$settings['db_pas
 global $mysqli;
 
 
-function hostFromID($host_id) {
+function hostFromID($hostID) {
 	global $mysqli;
-	$sql = "SELECT ip FROM sessions WHERE id = '".$host_id."'";
+	$sql = "SELECT ip FROM sessions WHERE id = '".$hostID."'";
 	if(!$result = $mysqli->query($sql)) {
 		echo "Sorry, couldn't run that query";
 		
@@ -26,9 +26,9 @@ function hostFromID($host_id) {
 	return $rtn;
 }
 
-function sensorFromID($sensor_id) {
+function sensorFromID($sensorID) {
 	global $mysqli;
-	$sql = "SELECT ip FROM sensors WHERE id = '".$sensor_id."'";
+	$sql = "SELECT ip FROM sensors WHERE id = '".$sensorID."'";
 	//if(!$result = $mysqli->query($sql)) {
 	if(!$result = $mysqli->query($sql)) {
 		echo "Sorry, couldn't run that query";
@@ -59,6 +59,7 @@ function fetchSessions($limiter = NULL) {
 	}
 	if(!(is_null($limiter))) {
 		$something = NULL;
+		$something = '1';
 	}	
 	return $result->fetch_assoc();
 }
