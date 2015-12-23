@@ -18,6 +18,7 @@ include('header.php');
 
         $unique_list = array_unique($list);
 	$counted_list = array_count_values($list);
+	$sane_list = $counted_list;
 	arsort($counted_list);
 //	print_r($counted_list);
 
@@ -49,9 +50,7 @@ include('header.php');
 		</thead>
 	<tbody>
 		<?php
-		foreach($counted_list as $item) {
-			print_r($item);
-		}
+			print_r($sane_list);		
 		?>
 	</tbody>
 </table>
