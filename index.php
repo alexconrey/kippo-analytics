@@ -19,7 +19,7 @@ include('header.php');
               <span class="text-muted">Test</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-		//<?php Widget::load('dow_chart'); ?>
+		<?php Widget::load('dow_chart'); ?>
               <h4>DOW Popularity</h4>
               <span class="text-muted">Displays which days are the most popular on your sensors.</span>
             </div>
