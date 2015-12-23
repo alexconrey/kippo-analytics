@@ -24,16 +24,19 @@ if(isset($_GET['ip'])) {
 	exit;
 }
 ?>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<td>Session ID</td>
+						<td>Username</td>
+						<td>Password</td>
+						<td>Timestamp</td>
+						<td>IP</td>
+					</tr>
+				</thead>
+				<tbody>
 
-
-<table>
-<tr>
-	<td>Session ID</td>
-	<td>Username</td>
-	<td>Password</td>
-	<td>Timestamp</td>
-	<td>IP</td>
-</tr>
 <?php
 
 while($attempt = $result->fetch_assoc()) {
@@ -46,7 +49,9 @@ while($attempt = $result->fetch_assoc()) {
 	echo "</td>";
 }
 ?>
-</table>
+				</tbody>
+			</table>
+		</div>
 <?php
 
 } else {
