@@ -2,6 +2,7 @@
 include('header.php');
 global $mysqli;
 global $settings;
+global $sensors;
 //        $mysqli = new mysqli('ml1db1.zynchost.local','kippo','JpcEQKrcSQ==','kippo');
 if(isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -50,7 +51,7 @@ if(isset($_GET['id'])) {
 				echo "<td>".$attempt['id']."</td>";
 				echo "<td>".$attempt['starttime']."</td>";
 				echo "<td>".$attempt['endtime']."</td>";
-				echo "<td>".$attempt['sensor']."</td>";
+				echo "<td>".$sensors[$attempt['sensor']]['hostname']."</td>";
 				echo "<td>".$attempt['username']."</td>";
 				echo "<td>".$attempt['password']."</td>";
 				echo "<td>".$attempt['ip']."</td>";
