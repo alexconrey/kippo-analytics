@@ -48,13 +48,13 @@ if(isset($_GET['id'])) {
 				$list['endtime'] = $attempt['endtime'];
 				$list['sensor'] = $attempt['sensor'];
 				echo "<tr>";
-				echo "<td>".$attempt['id']."</td>";
+                echo "<td><a href='searchByID.php?id=".$attempt['session']."'>".$attempt['session']."</a></td>";
 				echo "<td>".$attempt['starttime']."</td>";
 				echo "<td>".$attempt['endtime']."</td>";
-				echo "<td>".$sensors[$attempt['sensor']]['hostname']."</td>";
-				echo "<td>".$attempt['username']."</td>";
+				echo "<td><a href='searchBySensor.php?id=".$attempt['sensor']."'>".$sensors[$attempt['sensor']]['hostname']."</a></td>";
+                echo "<td><a href='searchByUser.php?user=".$attempt['user']."'>".$attempt['user']."</a></td>";
 				echo "<td>".$attempt['password']."</td>";
-				echo "<td>".$attempt['ip']."</td>";
+				echo "<td><a href='searchByIP.php?ip=".$attempt['ip']."'>".$attempt['ip']."</a></td>";
 				echo "</tr>";	
 	        }
 ?>
