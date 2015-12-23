@@ -49,7 +49,8 @@ include('header.php');
 			</tr>
 		</thead>
 	<tbody>
-		<?php
+		<?
+			print_r(array_keys($sane_list));
 			foreach($sane_list as $item) {
 				echo "<tr>";
 				echo "<td>".$item[0]."</td>";
