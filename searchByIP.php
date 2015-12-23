@@ -56,7 +56,7 @@ while($attempt = $result->fetch_assoc()) {
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Search By IP</h1>
           <div class="col-lg-6">
-          	<div class="input-group">
+          	<div class="input-group input-group-lg">
           		<form action="#" method="get">
           		<input type="text" class="form-control" name="ip" placeholder="Search for...">
           		<span class="input-group-btn">
