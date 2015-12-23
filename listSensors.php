@@ -15,11 +15,11 @@ include('header.php');
 <?php
 if(!$result = $mysqli->query("SELECT * FROM sensors")) {
         echo "Couldn't run that query right now.";
-        exit;
+        
 }
 if($result->num_rows === 0) {
         echo "Could not find any established connections";
-        exit;
+        
 }
 
 ?>

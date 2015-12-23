@@ -4,11 +4,11 @@ global $sensors;
 
 if(!$result = $mysqli->query("SELECT auth.session,starttime,endtime,sensor,ip FROM auth,sessions WHERE auth.session = sessions.id ORDER BY starttime DESC LIMIT 50")) {
         echo "Couldn't run that query right now.";
-        exit;
+        
 }
 if($result->num_rows === 0) {
         echo "Could not find any established connections";
-        exit;
+        
 }
 
 ?>

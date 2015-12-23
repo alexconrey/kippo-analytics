@@ -7,7 +7,7 @@ if(isset($_GET['id'])) {
   $id = $_GET['id'];
   if(!$result = $mysqli->query("SELECT * FROM sessions WHERE sensor = '".$id."'")) {
           echo "Couldn't run that query right now.";
-          exit;
+          
   }
           if($result->num_rows === 0) {
                   $error = throwError("That ID isn't showing in the records.");
@@ -23,7 +23,7 @@ if(isset($_GET['id'])) {
           </div>
     <?php if(isset($error)) {
             echo $error;
-            exit;
+            
     }
     ?>
     <div class="table-responsive">

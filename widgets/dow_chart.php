@@ -5,11 +5,11 @@ $end_thresh = date('Y-m-d') . " 23:59:59"; //Today, at midnight (even if is in f
         $sql = "SELECT starttime FROM sessions WHERE starttime BETWEEN '".$start_thresh."' AND '".$end_thresh."'";
         if(!$result = $mysqli->query($sql)) {
                 echo "Couldn't run that query";
-                exit;
+                
         }
         if($result->num_rows === 0) {
                 echo "No matches";
-                exit;
+                
         }
 
         $list = array();

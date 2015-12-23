@@ -7,7 +7,7 @@ if(isset($_GET['ip'])) {
 	$sql = "SELECT * FROM auth, sessions WHERE auth.session = sessions.id AND sessions.ip = '".$ip."'";
 	if(!$result = $mysqli->query($sql)) {
 		echo "Couldn't run that query";
-//		exit;
+//		
 	}
 	if($result->num_rows === 0) {
 		$error = throwError("That IP isn't showing in the records.");
@@ -21,7 +21,7 @@ if(isset($_GET['ip'])) {
 
 <?php if(isset($error)) {
 	echo $error;
-	exit;
+	
 }
 ?>
 		<div class="table-responsive">

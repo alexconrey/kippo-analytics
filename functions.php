@@ -7,17 +7,17 @@ $mysqli = new mysqli($settings['db_host'],$settings['db_user'],$settings['db_pas
 global $mysqli;
 
 
-function hostFromID($id) {
+function hostFromID($host_id) {
 	global $mysqli;
-	$sql = "SELECT ip FROM sessions WHERE id = '".$id."'";
+	$sql = "SELECT ip FROM sessions WHERE id = '".$host_id."'";
 	if(!$result = $mysqli->query($sql)) {
 		echo "Sorry, couldn't run that query";
-		exit;
+		
 	}
 	
 	if($result->num_rows === 0) {
 		echo "Couldn't find a match on that ID";
-		exit;
+		
 	}
 	$rtn = '';
 	while($client = $result->fetch_assoc()) {
@@ -26,17 +26,17 @@ function hostFromID($id) {
 	return $rtn;
 }
 
-function sensorFromID($id) {
+function sensorFromID($sensor_id) {
 	global $mysqli;
-	$sql = "SELECT ip FROM sensors WHERE id = '".$id."'";
+	$sql = "SELECT ip FROM sensors WHERE id = '".$sensor_id."'";
 	//if(!$result = $mysqli->query($sql)) {
 	if(!$result = $mysqli->query($sql)) {
 		echo "Sorry, couldn't run that query";
-		exit;
+		
 	}
 	if($result->num_rows === 0) {
 		echo "Couldn't find a match on that sensor";
-		exit;
+		
 	}
 	$rtn = '';
 	while($sensor = $result->fetch_assoc()) {
@@ -50,11 +50,11 @@ function fetchSessions($limiter = NULL) {
 	$sql = "SELECT * FROM sessions";
 	if(!$result = $mysqli->query($sql)) {
 		echo "Couldn't run that query right now";
-		exit;
+		
 	}
 	if($result->num_rows === 0) {
 		echo "No results found";
-		exit;
+		
 	}
 	
 	return $result->fetch_assoc();
@@ -67,11 +67,11 @@ function fetchSensors() {
 	$sql = "SELECT * FROM sensors";
 	if(!$result = $mysqli->query($sql)) {
 		echo "Sorry, couldn't run that query";
-		exit;
+		
 	}
 	if($result->num_rows === 0) {
 		echo "There's no sensors here";
-		exit;
+		
 	}
 	
 	while($sensor = $result->fetch_assoc()) {

@@ -4,11 +4,11 @@ include('header.php');
         $sql = "SELECT password FROM auth WHERE timestamp BETWEEN '".date('Y-m-d')." 00:00:00' AND '".date('Y-m-d')." 23:59:59' LIMIT 128";
         if(!$result = $mysqli->query($sql)) {
                 echo "Couldn't run that query";
-                exit;
+                
         }
         if($result->num_rows === 0) {
                 $error = throwError("That isn't showing in the records.");
-                exit;
+                
         }
 
         $list = array();
@@ -32,7 +32,7 @@ include('header.php');
 
 <?php if(isset($error)) {
         echo $error;
-        exit;
+        
 }
 ?>
 <div class="table-responsive">

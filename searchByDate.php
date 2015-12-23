@@ -9,11 +9,11 @@ include('functions.php');
         if(!$result = $mysqli->query($sql)) {
                 echo "Couldn't run that query";
 		echo $mysqli->connect_error;
-                exit;
+                
         }
         if($result->num_rows === 0) {
                 echo "No matches";
-                exit;
+                
         }
 ?>
 <table>

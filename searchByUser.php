@@ -8,7 +8,7 @@
 	    if(!$result = $mysqli->query($sql)) {
 	        echo "Couldn't run that query";
 			echo $mysqli->connect_error;
-	        exit;
+	        
 	    }
 	    if($result->num_rows === 0) {
 	        $error = throwError("That ID isn't showing in the records.");
@@ -22,7 +22,7 @@
 
 	<?php if(isset($error)) {
 	    echo $error;
-	    exit;
+	    
 	}
 	?>
 	<div class="table-responsive">
