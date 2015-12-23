@@ -52,7 +52,7 @@ if(isset($_GET['id'])) {
 				echo "<td>".$attempt['starttime']."</td>";
 				echo "<td>".$attempt['endtime']."</td>";
 				echo "<td><a href='searchBySensor.php?id=".$attempt['sensor']."'>".$sensors[$attempt['sensor']]['hostname']."</a></td>";
-                echo "<td><a href='searchByUser.php?user=".$attempt['user']."'>".$attempt['user']."</a></td>";
+                echo "<td><a href='searchByUser.php?user=".$attempt['username']."'>".$attempt['username']."</a></td>";
 				echo "<td>".$attempt['password']."</td>";
 				echo "<td><a href='searchByIP.php?ip=".$attempt['ip']."'>".$attempt['ip']."</a></td>";
 				echo "</tr>";	

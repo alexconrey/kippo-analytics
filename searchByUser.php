@@ -42,13 +42,13 @@
 	<?php
 	        while($attempt = $result->fetch_assoc()) {
 				echo "<tr>";
-				echo "<td><a href='searchByID.php?id=".$attempt['id']."'>".$attempt['id']."</a></td>";
+				echo "<td><a href='searchByID.php?id=".$attempt['session']."'>".$attempt['session']."</a></td>";
 				echo "<td>".$attempt['starttime']."</td>";
 				echo "<td>".$attempt['endtime']."</td>";
-				echo "<td><a href='searchBySensor.php?id=".$attempt['sensor']."'>".$attempt['sensor']."</a></td>";
-				echo "<td>".$attempt['username']."</td>";
+				echo "<td><a href='searchBySensor.php?id=".$attempt['sensor']."'>".$sensors[$attempt['sensor']]['hostname']."</a></td>";
+                echo "<td><a href='searchByUser.php?user=".$attempt['username']."'>".$attempt['username']."</a></td>";
 				echo "<td>".$attempt['password']."</td>";
-				echo "<td>".$attempt['ip']."</td>";
+				echo "<td><a href='searchByIP.php?ip=".$attempt['ip']."'>".$attempt['ip']."</a></td>";
 				echo "</tr>";	
 	        }
 	?>
