@@ -1,5 +1,4 @@
 <?php
-include('../functions.php');
 global $mysqli;
         $sql = "SELECT username FROM auth WHERE timestamp BETWEEN '".date('Y-m-d')." 00:00:00' AND '".date('Y-m-d')." 23:59:59'";
         if(!$result = $mysqli->query($sql)) {

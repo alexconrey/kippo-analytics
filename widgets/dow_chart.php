@@ -1,5 +1,4 @@
 <?php
-include('../functions.php');
 global $mysqli;
         $sql = "SELECT starttime FROM sessions LIMIT 200";
         if(!$result = $mysqli->query($sql)) {

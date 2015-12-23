@@ -1,11 +1,9 @@
 <?php
-include('../functions.php');
 global $mysqli;
 global $sensors;
 
 if(!$result = $mysqli->query("SELECT id,starttime,endtime,sensor,ip FROM sessions ORDER BY starttime DESC LIMIT 50")) {
         echo "Couldn't run that query right now.";
-	echo $mysqli->connect_error;
         exit;
 }
 if($result->num_rows === 0) {
