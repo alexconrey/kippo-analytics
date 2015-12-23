@@ -34,8 +34,6 @@ if(isset($_GET['id'])) {
             <td>Start Time</td>
             <td>End Time</td>
             <td>Sensor</td>
-            <td>Username</td>
-            <td>Password</td>
             <td>IP</td>
           </tr>
         </thead>
