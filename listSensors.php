@@ -38,7 +38,7 @@ if($result->num_rows === 0) {
 		$sensors = fetchSensors();
 		foreach($sensors as $sensor) {
 			echo "<tr>";
-			echo "<td>".$sensor['id']."</td>";
+			echo "<td><a href='".$sensor['id']."'>".$sensor['id']."</a></td>";
 			echo "<td>".$sensor['ip']."</td>";
 			echo "<td>".$sensor['hostname']."</td>";
 			echo "</tr>";

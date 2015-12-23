@@ -11,22 +11,22 @@ include('header.php');
             <div class="col-xs-6 col-sm-3 placeholder">
 		<?php Widget::load('password_chart'); ?>
               <h4>Password Popularity</h4>
-              <span class="text-muted">Test</span>
+              <span class="text-muted">Most Frequently Attempted Passwords Today</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
 		<?php Widget::load('username_chart'); ?>
               <h4>Username Popularity</h4>
-              <span class="text-muted">Test</span>
+              <span class="text-muted">Most Frequently Attempted Usernames Today</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
 		<?php Widget::load('dow_chart'); ?>
               <h4>DOW Popularity</h4>
-              <span class="text-muted">Displays which days are the most popular on your sensors.</span>
+              <span class="text-muted">Shows which of the last 7 days had the most authentication requests.</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
 		<?php Widget::load('source_chart'); ?>
               <h4>Source Popularity</h4>
-              <span class="text-muted">Something else</span>
+              <span class="text-muted">Most Popular Source IPs Today</span>
             </div>
           </div>
 
