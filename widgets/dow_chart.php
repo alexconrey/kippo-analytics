@@ -1,7 +1,7 @@
 <?php
 global $mysqli;
 $start_thresh = date('Y-m-d H:i:s', time()-604800); //A week ago, from right now
-$end_thresh = date('Y-m-d H:i:s') . " 23:59:59"; //Today, at midnight (even if is in future, some times the timestamps aren't in sync with real time)
+$end_thresh = date('Y-m-d') . " 23:59:59"; //Today, at midnight (even if is in future, some times the timestamps aren't in sync with real time)
         $sql = "SELECT starttime FROM sessions WHERE starttime BETWEEN '".$start_thresh."' AND '".$end_thresh."'";
         if(!$result = $mysqli->query($sql)) {
                 echo "Couldn't run that query";
