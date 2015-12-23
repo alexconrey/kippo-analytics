@@ -36,52 +36,24 @@ include('header.php');
 }
 ?>
 <div class="table-responsive">
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<td>ID</td>
-				<td>Start Time</td>
-				<td>End Time</td>
-				<td>Sensor</td>
-				<td>Username</td>
-				<td>Password</td>
-				<td>IP</td>
-			</tr>
-		</thead>
-	<tbody>
-		<?
-			print_r(array_keys($sane_list));
-			foreach($sane_list as $item) {
-				echo "<tr>";
-				echo "<td>".$item[0]."</td>";
-				echo "</tr>";
-			}
-		?>
-	</tbody>
+        <table class="table table-striped">
+                <thead>
+                        <tr>
+                                <td>Password</td>
+                                <td>Attempts</td>
+                        </tr>
+                </thead>
+        <tbody>
+                <?php
+                        foreach(array_keys($sane_list) as $item) {
+                                echo "<tr>";
+                                echo "<td>".$item."</td>";
+                                echo "<td>".$sane_list[$item]."</td>";
+                                echo "</tr>";
+                        }
+                ?>
+        </tbody>
 </table>
 </div>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Password', 'Attempts'],
-	  <?php 
-	  foreach($unique_list as $i) {
-		echo "['".$i."', ".$counted_list[$i]."],\n";
-	  }
-	  ?>
-        ]);
-
-        var options = {
-	  chartArea: {width:'90%', height: '90%'},
-	  legend: {position: 'none'},
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
-    <div id="piechart" style="width: 200px; height: 200px;"></div>
+?>
