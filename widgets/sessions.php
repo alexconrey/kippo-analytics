@@ -2,7 +2,7 @@
 global $mysqli;
 global $sensors;
 
-if(!$result = $mysqli->query("SELECT id,starttime,endtime,sensor,ip FROM sessions ORDER BY starttime DESC LIMIT 50")) {
+if(!$result = $mysqli->query("SELECT auth.session,starttime,endtime,sensor,ip FROM auth,sessions WHERE auth.session = sessions.id ORDER BY starttime DESC LIMIT 50")) {
         echo "Couldn't run that query right now.";
         exit;
 }
@@ -29,7 +29,7 @@ if($result->num_rows === 0) {
                 <?php
                 while($session = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td><a href='searchByID.php?id=".$session['id']."'>".$session['id']."</a></td>";
+                        echo "<td><a href='searchByID.php?id=".$session['session']."'>".$session['session']."</a></td>";
                         echo "<td>".$session['starttime']."</td>";
                         echo "<td>".$session['endtime']."</td>";
 //                        echo "<td><a href='searchBySensor.php?id=".$session['sensor']."'>".$session['sensor']."</a></td>";

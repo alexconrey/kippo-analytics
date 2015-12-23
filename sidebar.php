@@ -4,7 +4,7 @@
           <ul class="nav nav-sidebar">
             <li class="active"><a href="index.php">Dashboard <span class="sr-only">Dashboard</span></a></li>
             <li><a href="listSensors.php">Sensor List</a></li>
-            <li><a href="#">Analytics</a></li>
+            <li><a href="popularPasswords.php">Popular Passwords</a></li>
             <li><a href="#">Export</a></li>
           </ul>
           <ul class="nav nav-sidebar">
