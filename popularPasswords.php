@@ -50,7 +50,11 @@ include('header.php');
 		</thead>
 	<tbody>
 		<?php
-			print_r($sane_list);		
+			foreach($sane_list as $item) {
+				echo "<tr>";
+				echo "<td>".$item[0]."</td>";
+				echo "</tr>";
+			}
 		?>
 	</tbody>
 </table>
