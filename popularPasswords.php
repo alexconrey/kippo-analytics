@@ -2,11 +2,11 @@
 include('header.php');
 		global $mysqli;
         $sql = "SELECT password FROM auth WHERE timestamp BETWEEN '".date('Y-m-d')." 00:00:00' AND '".date('Y-m-d')." 23:59:59' LIMIT 128";
-        if(!$result = $mysqli->query($sql)) {
+        if (!$result = $mysqli->query($sql)) {
                 echo "Couldn't run that query";
                 
         }
-        if($result->num_rows === 0) {
+        if ($result->num_rows === 0) {
                 $error = throwError("That isn't showing in the records.");
                 
         }
@@ -30,7 +30,7 @@ include('header.php');
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Popular Passwords</h1>
 
-<?php if(isset($error)) {
+<?php if (isset($error)) {
         echo $error;
         
 }
@@ -45,7 +45,7 @@ include('header.php');
                 </thead>
         <tbody>
                 <?php
-                        foreach(array_keys($sane_list) as $item) {
+                        foreach (array_keys($sane_list) as $item) {
                                 echo "<tr>";
                                 echo "<td>".$item."</td>";
                                 echo "<td>".$sane_list[$item]."</td>";

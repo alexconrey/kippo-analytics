@@ -10,12 +10,12 @@ global $mysqli;
 function hostFromID($hostID) {
 	global $mysqli;
 	$sql = "SELECT ip FROM sessions WHERE id = '".$hostID."'";
-	if(!$result = $mysqli->query($sql)) {
+	if (!$result = $mysqli->query($sql)) {
 		echo "Sorry, couldn't run that query";
 		
 	}
 	
-	if($result->num_rows === 0) {
+	if ($result->num_rows === 0) {
 		echo "Couldn't find a match on that ID";
 		
 	}
@@ -29,12 +29,12 @@ function hostFromID($hostID) {
 function sensorFromID($sensorID) {
 	global $mysqli;
 	$sql = "SELECT ip FROM sensors WHERE id = '".$sensorID."'";
-	//if(!$result = $mysqli->query($sql)) {
-	if(!$result = $mysqli->query($sql)) {
+	//if (!$result = $mysqli->query($sql)) {
+	if (!$result = $mysqli->query($sql)) {
 		echo "Sorry, couldn't run that query";
 		
 	}
-	if($result->num_rows === 0) {
+	if ($result->num_rows === 0) {
 		echo "Couldn't find a match on that sensor";
 		
 	}
@@ -49,15 +49,15 @@ function sensorFromID($sensorID) {
 function fetchSessions($limiter = NULL) {
 	global $mysqli;
 	$sql = "SELECT * FROM sessions";
-	if(!$result = $mysqli->query($sql)) {
+	if (!$result = $mysqli->query($sql)) {
 		echo "Couldn't run that query right now";
 		
 	}
-	if($result->num_rows === 0) {
+	if ($result->num_rows === 0) {
 		echo "No results found";
 		
 	}
-	if(!(is_null($limiter))) {
+	if (!(is_null($limiter))) {
 		$something = NULL;
 		$something = '1';
 	}	
@@ -69,11 +69,11 @@ function fetchSensors() {
 	global $mysqli;
 	$loaded = array();
 	$sql = "SELECT * FROM sensors";
-	if(!$result = $mysqli->query($sql)) {
+	if (!$result = $mysqli->query($sql)) {
 		echo "Sorry, couldn't run that query";
 		
 	}
-	if($result->num_rows === 0) {
+	if ($result->num_rows === 0) {
 		echo "There's no sensors here";
 		
 	}

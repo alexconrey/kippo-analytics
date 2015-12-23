@@ -6,12 +6,12 @@ include('functions.php');
 	$starttime = $date . ' 00:00:00';
 	$endtime = $date . ' 23:59:59';
         $sql = "SELECT * FROM auth, sessions WHERE auth.session = sessions.id AND starttime BETWEEN '$starttime' AND '$endtime'";
-        if(!$result = $mysqli->query($sql)) {
+        if (!$result = $mysqli->query($sql)) {
                 echo "Couldn't run that query";
 		echo $mysqli->connect_error;
                 
         }
-        if($result->num_rows === 0) {
+        if ($result->num_rows === 0) {
                 echo "No matches";
                 
         }
