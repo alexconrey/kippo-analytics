@@ -1,6 +1,7 @@
 <?php
 global $mysqli;
-        $sql = "SELECT password FROM auth WHERE timestamp BETWEEN '".date('Y-m-d')." 00:00:00' AND '".date('Y-m-d')." 23:59:59' LIMIT 128";
+global $settings;
+        $sql = "SELECT password FROM auth WHERE timestamp BETWEEN '".date('Y-m-d')." 00:00:00' AND '".date('Y-m-d')." 23:59:59' LIMIT " . $settings['db_result_limit'];
         if(!$result = $mysqli->query($sql)) {
                 echo "Couldn't run that query";
                 exit;

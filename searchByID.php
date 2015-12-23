@@ -1,9 +1,11 @@
 <?php
 include('header.php');
 global $mysqli;
+global $settings;
         $id = $_GET['id'];
 //        $mysqli = new mysqli('ml1db1.zynchost.local','kippo','JpcEQKrcSQ==','kippo');
-        $sql = "SELECT * FROM auth, sessions WHERE auth.session = sessions.id AND auth.session = '$id'";
+
+        $sql = "SELECT * FROM auth, sessions WHERE auth.session = sessions.id AND auth.session = '$id' LIMIT ".$settings['db_result_limit'];
         if(!$result = $mysqli->query($sql)) {
                 echo "Couldn't run that query";
 		echo $mysqli->connect_error;
