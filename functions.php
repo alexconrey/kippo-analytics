@@ -10,9 +10,7 @@ global $mysqli;
 function runQuery($sql, $error) {
 	global $settings;
 	global $mysqli;
-	return $mysqli->query($sql);
-	}
-	
+	return $mysqli->query($sql);	
 }
 
 
