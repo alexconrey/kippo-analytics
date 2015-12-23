@@ -7,13 +7,6 @@ $mysqli = new mysqli($settings['db_host'],$settings['db_user'],$settings['db_pas
 global $mysqli;
 
 
-function runQuery($sql, $error) {
-	global $settings;
-	global $mysqli;
-	return $mysqli->query($sql);	
-}
-
-
 function hostFromID($id) {
 	global $mysqli;
 	$sql = "SELECT ip FROM sessions WHERE id = '".$id."'";
