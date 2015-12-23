@@ -16,15 +16,7 @@ global $mysqli;
 
 function runQuery($sql, $error) {
 	global $settings;
-	$mysqli = new mysqli($settings['db_host'],$settings['db_user'],$settings['db_pass'],$settings['db_database']);	
-	$spitback = '';
-	if(!$result = $mysqli->query($sql)) {
-		echo "Sorry, couldn't run that query";
-		$error = $mysqli->connect_error();
-		exit;
-	}
-	else {
-	$spitback = $result;
+	global $mysqli;
 	return $mysqli->query($sql);
 	}
 	
@@ -54,7 +46,7 @@ function sensorFromID($id) {
 	global $mysqli;
 	$sql = "SELECT ip FROM sensors WHERE id = '".$id."'";
 	//if(!$result = $mysqli->query($sql)) {
-	if(!$result = runQuery($sql)) {
+	if(!$result = $mysqli->query($sql)) {
 		echo "Sorry, couldn't run that query";
 		exit;
 	}
@@ -72,7 +64,7 @@ function sensorFromID($id) {
 
 function fetchSessions($limiter = NULL) {
 	$sql = "SELECT * FROM sessions";
-	if(!$result = runQuery($sql)) {
+	if(!$result = $mysqli->query($sql)) {
 		echo "Couldn't run that query right now";
 		exit;
 	}
