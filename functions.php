@@ -1,13 +1,6 @@
 <?php
 include('widgets.php');
-
-$setttings = array();
-$settings['site_name'] = 'Kippo Analytics';
-
-$settings['db_host'] = 'localhost';
-$settings['db_user'] = 'kippo';
-$settings['db_pass'] = '';
-$settings['db_database'] = 'kippo';
+include('settings.php');
 global $settings;
 
 $mysqli = new mysqli($settings['db_host'],$settings['db_user'],$settings['db_pass'],$settings['db_database']);	
