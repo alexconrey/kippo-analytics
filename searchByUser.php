@@ -42,7 +42,7 @@
 	<?php
 	        while($attempt = $result->fetch_assoc()) {
 				echo "<tr>";
-				echo "<td><a href='searchByID.php?id=".$attempt['session']."'>".$attempt['session']."</a></td>";
+				echo "<td><a href='searchByID.php?id=".$attempt['id']."'>".$attempt['id']."</a></td>";
 				echo "<td>".$attempt['starttime']."</td>";
 				echo "<td>".$attempt['endtime']."</td>";
 				echo "<td><a href='searchBySensor.php?id=".$attempt['sensor']."'>".$sensors[$attempt['sensor']]['hostname']."</a></td>";
