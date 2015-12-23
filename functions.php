@@ -32,7 +32,7 @@ function runQuery($sql, $error) {
 
 
 function hostFromID($id) {
-	$mysqli = new mysqli('ml1db1.zynchost.local','kippo','JpcEQKrcSQ==','kippo');
+	global $mysqli;
 	$sql = "SELECT ip FROM sessions WHERE id = '".$id."'";
 	if(!$result = $mysqli->query($sql)) {
 		echo "Sorry, couldn't run that query";
@@ -51,9 +51,10 @@ function hostFromID($id) {
 }
 
 function sensorFromID($id) {
-        $mysqli = new mysqli('ml1db1.zynchost.local','kippo','JpcEQKrcSQ==','kippo');
+	global $mysqli;
 	$sql = "SELECT ip FROM sensors WHERE id = '".$id."'";
-	if(!$result = $mysqli->query($sql)) {
+	//if(!$result = $mysqli->query($sql)) {
+	if(!$result = runQuery($sql))
 		echo "Sorry, couldn't run that query";
 		exit;
 	}
@@ -104,23 +105,6 @@ function fetchSensors() {
 	}
 
 	return $loaded;
-}
-
-function sensor_id2ip($id) {
-        $sql = "SELECT * FROM sensors WHERE id = '".$id."'";
-        if(!$result = $mysqli->query($sql)) {
-                echo "Sorry, couldn't run that query";
-                exit;
-        }
-        if($result->num_rows === 0) {
-                echo "There's no sensors with that IP";
-                exit;
-        }
-        
-        $tm = $result->fetch_assoc();
-        $ip = $tm['ip'];
-        
-        return $ip;
 }
 
 $sensors = fetchSensors();
