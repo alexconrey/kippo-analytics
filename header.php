@@ -40,6 +40,6 @@ include('functions.php');
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body class="flat-blue">
 <?php include('navbar.php'); ?>
 <?php include('sidebar.php'); ?>
