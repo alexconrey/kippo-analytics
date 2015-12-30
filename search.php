@@ -7,7 +7,7 @@ if(isset($_GET['keyword'])) {
 	} else if(strlen($_GET['keyword']) == '32') {
 		header('Location: searchByID.php?id='.$_GET['keyword']);
 	} else if(var_dump(checkdate(strtotime($_GET['keyword'])))) {
-		header('Location: searchByDate.php?date='$_GET['keyword']);
+		header('Location: searchByDate.php?date='.$_GET['keyword']);
 	} 
 } else {
 ?>
