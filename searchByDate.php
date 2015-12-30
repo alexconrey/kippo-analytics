@@ -1,8 +1,7 @@
 <?php
-include('functions.php');
-
+include('header.php');
+global $mysqli;
         $date = $_GET['date'];
-        $mysqli = new mysqli('ml1db1.zynchost.local','kippo','JpcEQKrcSQ==','kippo');
 	$starttime = $date . ' 00:00:00';
 	$endtime = $date . ' 23:59:59';
         $sql = "SELECT * FROM auth, sessions WHERE auth.session = sessions.id AND starttime BETWEEN '$starttime' AND '$endtime'";
