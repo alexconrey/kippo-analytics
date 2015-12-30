@@ -4,7 +4,7 @@ global $mysqli;
 if(isset($_GET['ip'])) {
 	$ip = $_GET['ip'];
 //	$mysqli = new mysqli('ml1db1.zynchost.local','kippo','JpcEQKrcSQ==','kippo');
-	$sql = "SELECT * FROM auth, sessions WHERE auth.session = sessions.id AND sessions.ip = '".$ip."'";
+	$sql = "SELECT * FROM auth, sessions WHERE auth.session = sessions.id AND sessions.ip = '".mysql_real_escape_string($ip)."'";
 	if(!$result = $mysqli->query($sql)) {
 		echo "Couldn't run that query";
 //		
